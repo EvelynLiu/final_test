@@ -1,6 +1,6 @@
 $(document).ready(function() {
   Parse.initialize('cBg30mmL0gugVy89T8VSVyRLE0swECDDg5ccJ46N','xJoUF67t6m6DneUpQna1HKOnCnGm29dUWuifPCrg');
-
+  alert(1111);
 })
 
 function call (page, category){
