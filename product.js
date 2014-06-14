@@ -1,5 +1,8 @@
-function (page, category){
-	window.scrollTo(0,0);
+(function(){
+  Parse.initialize('cBg30mmL0gugVy89T8VSVyRLE0swECDDg5ccJ46N','xJoUF67t6m6DneUpQna1HKOnCnGm29dUWuifPCrg');
+
+function call (page, category){
+  window.scrollTo(0,0);
       // To support pagination.
     var limit = 15;
     var skip = (page-1) * limit;
@@ -14,13 +17,13 @@ function (page, category){
           var objList = results.map(function (e){ return e.toJSON() });
           objList.forEach(function(e){
             console.log(e);
-            var html = "<a href="farmer.html">	
-							<div class="about">
-								<img src="img/orange_2.png"></img>
-								<p class="name">劉小琪</p>
-								<p>蘋果、香蕉</p>
-							</div>
-						</a>";
+            var html = "<a href="farmer.html">  
+              <div class="about">
+                <img src="img/orange_2.png"></img>
+                <p class="name">劉小琪</p>
+                <p>蘋果、香蕉</p>
+              </div>
+            </a>";
             //var html = '<h2>'+e.title+'</h2>'+e.size;
             //$('#content').html("");
             $('#content').append(html);
@@ -51,3 +54,5 @@ function (page, category){
         }
       });
 }
+
+})
