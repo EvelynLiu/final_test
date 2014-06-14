@@ -2,6 +2,7 @@
   Parse.initialize('cBg30mmL0gugVy89T8VSVyRLE0swECDDg5ccJ46N','xJoUF67t6m6DneUpQna1HKOnCnGm29dUWuifPCrg');
 
 function call (page, category){
+  alert(0);
   window.scrollTo(0,0);
       // To support pagination.
     var limit = 15;
@@ -13,6 +14,7 @@ function call (page, category){
     query.equalTo('Category', category);
     query.descending("createdAt");
     query.find({
+      alert(1);
         success: function(results) {
           var objList = results.map(function (e){ return e.toJSON() });
           objList.forEach(function(e){
