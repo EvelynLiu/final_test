@@ -16,7 +16,7 @@ function call (page, category){
     query.equalTo('Category', category);
     query.descending("createdAt");
     query.find({
-      alert(1);
+      //alert(1);
         success: function(results) {
           var objList = results.map(function (e){ return e.toJSON() });
           objList.forEach(function(e){
