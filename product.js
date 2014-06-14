@@ -1,6 +1,8 @@
 (function(){
   Parse.initialize('cBg30mmL0gugVy89T8VSVyRLE0swECDDg5ccJ46N','xJoUF67t6m6DneUpQna1HKOnCnGm29dUWuifPCrg');
 
+})
+
 function call (page, category){
   alert(0);
   window.scrollTo(0,0);
@@ -58,4 +60,3 @@ function call (page, category){
       });
 }
 
-})
