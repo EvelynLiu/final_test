@@ -8,11 +8,11 @@ function getData(page,category){
   // To support pagination.
   var limit = 15;
   var skip = (page-1) * limit;
-  var Product = Parse.Object.extend("Product");
-  var query = new Parse.Query(Product);
+  var Farmer = Parse.Object.extend("Farmer");
+  var query = new Parse.Query(Farmer);
   query.limit(limit);
   query.skip(skip);
-  query.equalTo("Category", category);
+  query.equalTo("district", category);
   query.descending("createdAt");
   query.find({
     success: function(results) {
@@ -20,7 +20,7 @@ function getData(page,category){
       // Do something with the returned Parse.Object values
       for (var i = 0; i < results.length; i++) { 
         var object = results[i];
-        alert(object.id + ' - ' + object.get('Category'));
+        alert(object.id + ' - ' + object.get('district'));
       }
     },
     error: function(error) {
