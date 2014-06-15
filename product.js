@@ -16,6 +16,17 @@ function getData(page,category){
   query.descending("createdAt");
   query.find({
     success: function(results) {
+      alert("Successfully retrieved " + results.length + " scores.");
+      // Do something with the returned Parse.Object values
+      for (var i = 0; i < results.length; i++) { 
+        var object = results[i];
+        alert(object.id + ' - ' + object.get('Category'));
+      }
+    },
+    error: function(error) {
+      alert("Error: " + error.code + " " + error.message);
+    }
+    /*success: function(results) {
       alert(1);
       var objList = results.map(function (e){ return e.toJSON() });
       objList.forEach(function(e){
@@ -48,7 +59,7 @@ function getData(page,category){
 
         }  
       });
-    }
+    }*/
   });
 }
 
