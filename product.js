@@ -22,7 +22,7 @@ function getData(page,category){
       var objList = results.map(function (e){ return e.toJSON() });
       objList.forEach(function(e){
         console.log(e);
-        var html = '<img src="'+e.Name+'"></img><p class="name">'+e.Name+'</p><p>'+e.Name+'</p>';
+        var html = '<div class="about">''<img src="'+e.Name+'"></img><p class="name">'+e.Name+'</p><p>'+e.Name+'</p>''</div>';
         //var html = '<h2>'+e.title+'</h2>'+e.size;
         //$('#content').html("");
         $('.content').append(html);
