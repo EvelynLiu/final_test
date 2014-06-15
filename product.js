@@ -29,10 +29,10 @@ function getData(page,category){
         queryP.equalTo("Farmer",e.objectId);
         queryP.find({
           success: function(output){
-            alert(2);
             var productList = output.map(function (e){ return e.toJSON() });
+            console.log(productList);
             productList.forEach(function (e){
-              console.log(e);
+              alert(2);
               list = list+e.Prod_name+" ";
             });
           }
