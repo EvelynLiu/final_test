@@ -10,6 +10,14 @@ function getData(page,category){
   var skip = (page-1) * limit;
   var Farmer = Parse.Object.extend("Farmer");
   var query = new Parse.Query(Farmer);
+  query.find({
+    success:function(results) {
+      console.log("Total: "+results.length);
+    }
+    error:function(error) {
+      alert("Error when getting objects!");
+    }
+  });
   query.limit(limit);
   query.skip(skip);
   query.equalTo("district", category);
