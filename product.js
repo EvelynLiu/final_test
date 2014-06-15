@@ -16,19 +16,13 @@ function getData(page,category){
   query.descending("createdAt");
   query.find({
     success: function(results) {
+      alert(1);
       var objList = results.map(function (e){ return e.toJSON() });
       objList.forEach(function(e){
         console.log(e);
-        var html = "TEST";
-            /*var html = '<a href="farmer.html">  
-              <div class="about">
-                <img src="img/orange_2.png"></img>
-                <p class="name">劉小琪</p>
-                <p>蘋果、香蕉</p>
-              </div>
-            </a>';
-            var html = '<h2>'+e.title+'</h2>'+e.size;*/
-            //$('#content').html("");
+        //var html = "TEST";
+        var html = '<h2>'+e.title+'</h2>'+e.size;
+        //$('#content').html("");
         $('#content').append(html);
       });
       //document.getElementById('content').innerHTML = templates.catalogTemplate(objList);
