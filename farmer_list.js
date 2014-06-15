@@ -1,5 +1,7 @@
 $(document).ready(function() {
   Parse.initialize('cBg30mmL0gugVy89T8VSVyRLE0swECDDg5ccJ46N','xJoUF67t6m6DneUpQna1HKOnCnGm29dUWuifPCrg');
+  getData(1,'五穀雜糧');
+  getData(1,'蔬菜');
 })
 
 function getData(page,category){
@@ -14,12 +16,11 @@ function getData(page,category){
   var queryP = new Parse.Query(Product);
   //================LIST!!!
   var list = "hihi";
-  alert("var");
   //================
-  //query.limit(limit);
-  //query.skip(skip);
-  query.equalTo("district", category);alert("equal");
-  query.descending("createdAt");alert("de");
+  query.limit(limit);
+  query.skip(skip);
+  query.equalTo("district", category);
+  query.descending("createdAt");
   query.find({
     success: function(results) {
       alert(1);
