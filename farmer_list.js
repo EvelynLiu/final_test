@@ -26,7 +26,6 @@ function getData(page,category){
       var objList = results.map(function (e){ return e.toJSON() });
       console.log(objList);
       objList.forEach(function (e){
-        //var html = '<div class="about"><img src="'+e.Name+'"></img><p class="name">'+e.Name+'</p><p>'+e.Name+'</p></div>';
         queryP.descending("createdAt");
         queryP.equalTo("Farmer",e.objectId);
         queryP.find({
@@ -39,7 +38,8 @@ function getData(page,category){
             });
           }
         });
-        var html = '<a href="farmer.html"><img src="img/about_2.png"></img></a><a href="farmer.html" id="name">'+e.Name+'</a><br><a href="farmer.html" id="product">'+list+'</a>';
+        //var html = '<a href="farmer.html"><img src="img/about_2.png"></img></a><a href="farmer.html" id="name">'+e.Name+'</a><br><a href="farmer.html" id="product">'+list+'</a>';
+        var html = '<a href="farmer.html" onClick="call(e.objectId)"><div class="about"><img src="'+e.Name+'"></img><p class="name">'+e.Name+'</p><p>'+list+'</p></div></a>';
         $('.content').append(html);
       });
       //document.getElementById('content').innerHTML = templates.catalogTemplate(objList);
