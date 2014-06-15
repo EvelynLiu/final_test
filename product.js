@@ -71,5 +71,6 @@ function getData(page,category){
       });
     }
   });*/
+  event.preventDefault();
 }
 
