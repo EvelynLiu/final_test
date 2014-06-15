@@ -12,7 +12,7 @@ function getData(page,category){
   var query = new Parse.Query(Product);
   query.limit(limit);
   query.skip(skip);
-  query.equalTo('Category', category);
+  query.equalTo("Category", category);
   query.descending("createdAt");
   query.find({
     success: function(results) {
@@ -54,9 +54,6 @@ function getData(page,category){
 
         }  
       });
-    }
-    error: function(err){
-      alert(2);
     }
   });
 }
