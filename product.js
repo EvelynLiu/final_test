@@ -24,7 +24,7 @@ function getData(page,category){
   query.equalTo("district", category);
   query.descending("createdAt");
   console.log(query);
-  /*query.find({
+  query.find({
     success: function(results) {
       alert("Successfully retrieved " + results.length + " scores.");
       // Do something with the returned Parse.Object values
@@ -36,7 +36,7 @@ function getData(page,category){
     error: function(error) {
       alert("Error: " + error.code + " " + error.message);
     }
-    /*success: function(results) {
+    success: function(results) {
       alert(1);
       var objList = results.map(function (e){ return e.toJSON() });
       objList.forEach(function(e){
@@ -70,7 +70,7 @@ function getData(page,category){
         }  
       });
     }
-  });*/
+  });
   event.preventDefault();
 }
 
