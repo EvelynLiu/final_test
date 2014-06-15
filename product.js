@@ -13,6 +13,7 @@ function getData(page,category){
   query.limit(limit);
   query.skip(skip);
   query.equalTo("district", category);
+  console.log(category);
   query.descending("createdAt");
   query.find({
     success: function(results) {
