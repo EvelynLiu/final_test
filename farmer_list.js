@@ -1,10 +1,8 @@
 $(document).ready(function() {
   Parse.initialize('cBg30mmL0gugVy89T8VSVyRLE0swECDDg5ccJ46N','xJoUF67t6m6DneUpQna1HKOnCnGm29dUWuifPCrg');
-  getData(1,'五穀雜糧','.content');
-  getData(1,'蔬菜','.content1');
 })
 
-function getData(page,category,content){
+function getData(page,category){
   alert(0);
   //window.scrollTo(0,0);
   // To support pagination.
@@ -42,7 +40,7 @@ function getData(page,category,content){
         });
         //var html = '<a href="farmer.html"><img src="img/about_2.png"></img></a><a href="farmer.html" id="name">'+e.Name+'</a><br><a href="farmer.html" id="product">'+list+'</a>';
         var html = '<a href="farmer.html" onClick="call(e.objectId)"><div class="about"><img src="'+e.Name+'"></img><p class="name">'+e.Name+'</p><p>'+list+'</p></div></a>';
-        $(content).append(html);
+        $('.content').append(html);
       });
       //document.getElementById('content').innerHTML = templates.catalogTemplate(objList);
       query.limit(0);
