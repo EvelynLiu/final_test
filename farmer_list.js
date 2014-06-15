@@ -39,7 +39,7 @@ function getData(page,category){
           }
         });
         //var html = '<a href="farmer.html"><img src="img/about_2.png"></img></a><a href="farmer.html" id="name">'+e.Name+'</a><br><a href="farmer.html" id="product">'+list+'</a>';
-        var html = '<a href="farmer.html" onClick="call(e.objectId)"><div class="about"><p class="name">'+e.Name+'</p><p>'+list+'</p></div></a>';
+        var html = '<div class="about"><img src="'+e.Name+'"></img><p class="name">'+e.Name+'</p><p>'+list+'</p></div>';
         $('.content').append(html);
       });
       //document.getElementById('content').innerHTML = templates.catalogTemplate(objList);
