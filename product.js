@@ -12,32 +12,32 @@ function getData(page,category){
   var Product = Parse.Object.extend("Product");
   var query = new Parse.Query(Farmer);
   var queryP = new Parse.Query(Product);
+  var list = "hihi";
   query.limit(limit);
   query.skip(skip);
   query.equalTo("district", category);
   query.descending("createdAt");
+  queryP.limit(2);
+  queryP.descending("createdAt");
+  queryP.equalTo("Farmer",'uzsKTuHo2o');
+  queryP.find({
+    success: function(output){
+      var productList = output.map(function (e){ return e.toJSON() });
+      console.log(productList);
+      productList.forEach(function (e){
+        alert(2);
+        list = list+e.Prod_name+" ";
+      });
+    }
+  });
   query.find({
     success: function(results) {
       alert(1);
       //$('#content').html("");
-      var list = "hihi";
       var objList = results.map(function (e){ return e.toJSON() });
       console.log(objList);
       objList.forEach(function (e){
         //var html = '<div class="about"><img src="'+e.Name+'"></img><p class="name">'+e.Name+'</p><p>'+e.Name+'</p></div>';
-        queryP.limit(2);
-        queryP.descending("createdAt");
-        queryP.equalTo("Farmer",e.objectId);
-        queryP.find({
-          success: function(output){
-            var productList = output.map(function (e){ return e.toJSON() });
-            console.log(productList);
-            productList.forEach(function (e){
-              alert(2);
-              list = list+e.Prod_name+" ";
-            });
-          }
-        });
         var html = '<a href="farmer.html"><img src="img/about_2.png"></img></a><a href="farmer.html" id="name">'+e.Name+'</a><br><a href="farmer.html" id="product">'+list+'</a>';
         $('.content').append(html);
       });
