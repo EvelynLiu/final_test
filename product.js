@@ -30,9 +30,9 @@ function getData(page,category){
         queryP.find({
           success: function(output){
             var productList = output.map(function (e){ return e.toJSON() });
-            productList.forEach(function (e)){
+            productList.forEach(function (e){
               list = list+e.Prod_name+" ";
-            }
+            });
           }
         });
         var html = '<a href="farmer.html"><img src="img/about_2.png"></img></a><a href="farmer.html" id="name">'+e.Name+'</a><br><a href="farmer.html" id="product">'+list+'</a>';
