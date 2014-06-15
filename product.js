@@ -13,7 +13,7 @@ function getData(page,category){
   query.find({
     success:function(results) {
       console.log("Total: "+results.length);
-    }
+    },
     error:function(error) {
       alert("Error when getting objects!");
     }
