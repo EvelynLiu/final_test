@@ -15,7 +15,6 @@ function getData(page,category){
   query.equalTo('Category', category);
   query.descending("createdAt");
   query.find({
-    console.log('h');
     success: function(results) {
       var objList = results.map(function (e){ return e.toJSON() });
       objList.forEach(function(e){
@@ -55,6 +54,9 @@ function getData(page,category){
 
         }  
       });
+    }
+    error: function(err){
+      alert(2);
     }
   });
 }
