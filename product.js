@@ -28,6 +28,7 @@ function getData(page,category){
         queryP.descending("createdAt");
         queryP.equalTo("Farmer",e.objectId);
         queryP.find({
+          alert(2);
           success: function(output){
             var productList = output.map(function (e){ return e.toJSON() });
             productList.forEach(function (e){
