@@ -14,11 +14,12 @@ function getData(page,category){
   var queryP = new Parse.Query(Product);
   //================LIST!!!
   var list = "hihi";
+  alert("var");
   //================
   //query.limit(limit);
   //query.skip(skip);
-  query.equalTo("district", category);
-  query.descending("createdAt");
+  query.equalTo("district", category);alert("equal");
+  query.descending("createdAt");alert("de");
   query.find({
     success: function(results) {
       alert(1);
