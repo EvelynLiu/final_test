@@ -11,14 +11,6 @@ function getData(page,category){
   var Farmer = Parse.Object.extend("Farmer");
   var query = new Parse.Query(Farmer);
   console.log(query);
-  query.find({
-    success:function(results) {
-      console.log("Total: "+results.length);
-    },
-    error:function(error) {
-      alert("Error: " + error.code + " " + error.message);
-    }
-  });
   query.limit(limit);
   query.skip(skip);
   query.equalTo("district", category);
@@ -30,10 +22,12 @@ function getData(page,category){
       var objList = results.map(function (e){ return e.toJSON() });
       objList.forEach(function(e){
         console.log(e);
-        //var html = "TEST";
-        var html = '<h2>'+e.title+'</h2>'+e.size;
+        var html = '<img src="'+e.Name+'"></img>
+          <p class="name">'+e.Name+'</p>
+          <p>'蘋果、香蕉'</p>';
+        //var html = '<h2>'+e.title+'</h2>'+e.size;
         //$('#content').html("");
-        $('#content').append(html);
+        $('.content').append(html);
       });
       //document.getElementById('content').innerHTML = templates.catalogTemplate(objList);
       query.limit(0);
