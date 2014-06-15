@@ -26,17 +26,6 @@ function getData(page,category){
   console.log(query);
   query.find({
     success: function(results) {
-      alert("Successfully retrieved " + results.length + " scores.");
-      // Do something with the returned Parse.Object values
-      for (var i = 0; i < results.length; i++) { 
-        var object = results[i];
-        alert(object.id + ' - ' + object.get('district'));
-      }
-    },
-    error: function(error) {
-      alert("Error: " + error.code + " " + error.message);
-    }
-    success: function(results) {
       alert(1);
       var objList = results.map(function (e){ return e.toJSON() });
       objList.forEach(function(e){
