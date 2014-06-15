@@ -10,6 +10,7 @@ function getData(page,category){
   var skip = (page-1) * limit;
   var Farmer = Parse.Object.extend("Farmer");
   var query = new Parse.Query(Farmer);
+  console.log(query);
   query.find({
     success:function(results) {
       console.log("Total: "+results.length);
