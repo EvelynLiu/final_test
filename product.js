@@ -15,7 +15,7 @@ function getData(page,category){
       console.log("Total: "+results.length);
     },
     error:function(error) {
-      alert("Error when getting objects!");
+      alert("Error: " + error.code + " " + error.message);
     }
   });
   query.limit(limit);
@@ -23,7 +23,7 @@ function getData(page,category){
   query.equalTo("district", category);
   query.descending("createdAt");
   console.log(query);
-  query.find({
+  /*query.find({
     success: function(results) {
       alert("Successfully retrieved " + results.length + " scores.");
       // Do something with the returned Parse.Object values
@@ -68,7 +68,7 @@ function getData(page,category){
 
         }  
       });
-    }*/
-  });
+    }
+  });*/
 }
 
