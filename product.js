@@ -32,6 +32,7 @@ function getData(page,category){
             alert(2);
             var productList = output.map(function (e){ return e.toJSON() });
             productList.forEach(function (e){
+              console.log(e);
               list = list+e.Prod_name+" ";
             });
           }
