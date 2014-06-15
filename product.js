@@ -17,9 +17,10 @@ function getData(page,category){
   query.skip(skip);
   query.equalTo("district", category);
   query.descending("createdAt");
-  queryP.limit(2);
+  //=============================================
+  //queryP.limit(2);
   queryP.descending("createdAt");
-  queryP.equalTo("Farmer",'uzsKTuHo2o');
+  queryP.equalTo("Category",'玉米');
   queryP.find({
     success: function(output){
       var productList = output.map(function (e){ return e.toJSON() });
@@ -30,6 +31,7 @@ function getData(page,category){
       });
     }
   });
+  //============================================
   query.find({
     success: function(results) {
       alert(1);
