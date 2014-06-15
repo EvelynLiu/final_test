@@ -20,7 +20,7 @@ function getData(page,category){
     success: function(results) {
       alert(1);
       //$('#content').html("");
-      var list = "";
+      var list = "hihi";
       var objList = results.map(function (e){ return e.toJSON() });
       objList.forEach(function (e){
         //var html = '<div class="about"><img src="'+e.Name+'"></img><p class="name">'+e.Name+'</p><p>'+e.Name+'</p></div>';
