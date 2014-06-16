@@ -65,7 +65,10 @@ function getData(page,category,tab){
             var productList = output.map(function (e){ return e.toJSON() });
             console.log(productList);
             productList.forEach(function (e){
-              list = e.Prod_name+" ";
+            //  list = e.Prod_name+" ";
+                list = "ShiShi";
+
+              console.log(list);
             });
           }
         });
