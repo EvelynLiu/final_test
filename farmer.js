@@ -4,7 +4,7 @@ $(document).ready(function() {
 
 function call (id){
   alert(0);
-  window.scrollTo(0,0);
+  //window.scrollTo(0,0);
   // To support pagination.
   var Farmer = Parse.Object.extend("Farmer");
   var Product = Parse.Object.extend("Product");
