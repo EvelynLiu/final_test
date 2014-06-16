@@ -62,7 +62,7 @@ function getData(page,category,tab){
         queryP.descending("createdAt");
         queryP.equalTo("Farmer",e.objectId);
         console.log(e.objectId);
-        queryP.find(console.log("find");{
+        queryP.find({
           success: function(output){
             var productList = output.map(function (e){ return e.toJSON() });
             console.log(productList);
@@ -71,6 +71,9 @@ function getData(page,category,tab){
               console.log("Inner0"+list);
             });
             console.log("Inner1"+list);
+          },
+          error: function(error) {
+          alert("Error: " + error.code + " " + error.message);
           }
         });
 
