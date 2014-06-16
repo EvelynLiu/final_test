@@ -39,7 +39,7 @@ function getData(page,category,tab){
     $('#tab4').attr("checked","");  
     $('#tab1').attr("checked",""); 
   }*/
-  $('tab2').attr("checked","checked");
+  $('#tab2').attr("checked","checked");
   var limit = 15;
   var skip = (page-1) * limit;
   var Farmer = Parse.Object.extend("Farmer");
