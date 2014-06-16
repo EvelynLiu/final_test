@@ -22,7 +22,7 @@ function getData(page,category){
   query.find({
     success: function(results) {
       alert(1);
-      //$('#content').html("");
+      $('#content').html("");
       var objList = results.map(function (e){ return e.toJSON() });
       console.log(objList);
       objList.forEach(function (e){
