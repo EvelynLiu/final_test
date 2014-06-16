@@ -13,7 +13,7 @@ function getData(page,category,tab){
   }
   else if(tab==='tab2'){
     $('#tab2').attr("checked","checked");
-    $('#tab1').attr("checked","");
+    $('#tab1').attr("checked"," ");
     $('#tab3').attr("checked",""); 
     $('#tab4').attr("checked","");  
     $('#tab5').attr("checked",""); 
