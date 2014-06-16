@@ -126,7 +126,7 @@ function call (id){
       var objList = results.map(function (e){ return e.toJSON() });
       console.log(objList);
       queryP.descending("createdAt");
-      queryP.equalTo("Farmer",e.objectId);
+      queryP.equalTo("Farmer",id);
       queryP.find({
         success: function(output){
           var productList = output.map(function (e){ return e.toJSON() });
