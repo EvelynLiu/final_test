@@ -175,7 +175,7 @@ section{
     border:1px solid #AAA;
 }
 
-.tab > input[type=radio]:checked + label{
+.tab > input[type=radio]:checked{
     background:#FFF;
     border-bottom:1px solid transparent;
     z-index:2;

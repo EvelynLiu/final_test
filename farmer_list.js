@@ -6,38 +6,39 @@ function getData(page,category,tab){
   alert(0);
   if(tab==="tab1"){
     $('#tab1').attr("checked","checked");
-    $('#tab2').attr("checked"," ");
-    $('#tab3').attr("checked"," "); 
-    $('#tab4').attr("checked"," ");  
-    $('#tab5').attr("checked"," ");     
+    $('#tab2').removeAttr("checked");
+    $('#tab3').removeAttr("checked"); 
+    $('#tab4').removeAttr("checked");  
+    $('#tab5').removeAttr("checked");
+    alert($('#tab2').attr("checked"));
   }
   else if(tab==="tab2"){
     $('#tab2').attr("checked","checked");
-    $('#tab1').attr("checked"," ");
-    $('#tab3').attr("checked"," "); 
-    $('#tab4').attr("checked"," ");  
-    $('#tab5').attr("checked"," "); 
+    $('#tab1').removeAttr("checked");
+    $('#tab3').removeAttr("checked"); 
+    $('#tab4').removeAttr("checked");  
+    $('#tab5').removeAttr("checked"); 
   }
   else if(tab==="tab3"){
     $('#tab3').attr("checked","checked");
-    $('#tab2').attr("checked"," ");
-    $('#tab1').attr("checked"," "); 
-    $('#tab4').attr("checked"," ");  
-    $('#tab5').attr("checked"," "); 
+    $('#tab2').removeAttr("checked");
+    $('#tab1').removeAttr("checked"); 
+    $('#tab4').removeAttr("checked");  
+    $('#tab5').removeAttr("checked"); 
   }
   else if(tab==="tab4"){
     $('#tab4').attr("checked","checked");
-    $('#tab2').attr("checked"," ");
-    $('#tab3').attr("checked"," "); 
-    $('#tab1').attr("checked"," ");  
-    $('#tab5').attr("checked"," "); 
+    $('#tab2').removeAttr("checked");
+    $('#tab3').removeAttr("checked"); 
+    $('#tab1').removeAttr("checked");  
+    $('#tab5').removeAttr("checked"); 
   }
   else if(tab==="tab5"){
     $('#tab5').attr("checked","checked");
-    $('#tab2').attr("checked"," ");
-    $('#tab3').attr("checked"," "); 
-    $('#tab4').attr("checked"," ");  
-    $('#tab1').attr("checked"," "); 
+    $('#tab2').removeAttr("checked");
+    $('#tab3').removeAttr("checked"); 
+    $('#tab4').removeAttr("checked");  
+    $('#tab1').removeAttr("checked"); 
   }
   var limit = 15;
   var skip = (page-1) * limit;
@@ -54,7 +55,7 @@ function getData(page,category,tab){
   query.descending("createdAt");
   query.find({
     success: function(results) {
-      alert(1);
+      //alert(1);
       $('.content').html("");
       var objList = results.map(function (e){ return e.toJSON() });
       console.log(objList);
@@ -66,13 +67,15 @@ function getData(page,category,tab){
             var productList = output.map(function (e){ return e.toJSON() });
             console.log(productList);
             productList.forEach(function (e){
-              alert(2);
+              //alert(2);
               list = list+e.Prod_name+" ";
             });
           }
         });
+        var photo = e.get("Farmer_Pic");
+        //$("profileImg")[0].src = profilePhoto.url();
         //var html = '<a href="farmer.html"><img src="img/about_2.png"></img></a><a href="farmer.html" id="name">'+e.Name+'</a><br><a href="farmer.html" id="product">'+list+'</a>';
-        var html = '<a href="farmer.html" onClick=" "><div class="about"><img src="'+e.Name+'"></img><p class="name">'+e.Name+'</p><p>'+list+'</p></div></a>';
+        var html = '<a href="farmer.html" onClick=" "><div class="about"><img src="'+photo.url()+'"></img><p class="name">'+e.Name+'</p><p>'+list+'</p></div></a>';
         $('.content').append(html);
       });
       //document.getElementById('content').innerHTML = templates.catalogTemplate(objList);
