@@ -4,7 +4,7 @@ $(document).ready(function() {
 
 function getData(page,category){
   alert(0);
-  //window.scrollTo(0,0);
+  window.scrollTo(0,0);
   // To support pagination.
   var limit = 15;
   var skip = (page-1) * limit;
@@ -19,7 +19,7 @@ function getData(page,category){
   query.skip(skip);
   query.equalTo("district", category);
   query.descending("createdAt");
-  query.find({
+  /*query.find({
     success: function(results) {
       alert(1);
       $('.content').html("");
@@ -66,7 +66,7 @@ function getData(page,category){
         }  
       });
     }
-  });
+  });*/
   event.preventDefault();
 }
 
