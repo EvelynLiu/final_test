@@ -4,11 +4,21 @@ $(document).ready(function() {
 
 function getData(page,category,tab){
   alert(0);
-  //window.scrollTo(0,0);
-  // To support pagination.
-  var t = "#"+tab;
-  console.log(t);
-  $(t).attr("checked","checked");
+  if(tab==="tab1"){
+    $('#tab1').attr("checked","checked");  
+  }
+  else if(tab==="tab2"){
+    $('#tab2').attr("checked","checked");
+  }
+  else if(tab==="tab3"){
+    $('#tab3').attr("checked","checked");
+  }
+  else if(tab==="tab4"){
+    $('#tab4').attr("checked","checked");
+  }
+  else{
+    $('#tab5').attr("checked","checked");
+  }
   var limit = 15;
   var skip = (page-1) * limit;
   var Farmer = Parse.Object.extend("Farmer");
