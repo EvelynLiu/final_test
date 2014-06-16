@@ -107,11 +107,8 @@ function getData(page,category,tab){
   event.preventDefault();
 }
 
-function call (id){
-  alert(0);
-}
 
-/*function call (id){
+function call (id){
   alert(0);
   //window.scrollTo(0,0);
   var Farmer = Parse.Object.extend("Farmer");
@@ -153,4 +150,4 @@ function call (id){
       }
   });
   event.preventDefault();
-}*/
+}
