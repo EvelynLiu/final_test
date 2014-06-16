@@ -4,10 +4,10 @@ $(document).ready(function() {
 
 function getData(page,category,tab){
   alert(0);
-  if(tab==="tab1"){
+  if(tab==='tab1'){
     $('#tab1').attr("checked","checked");  
   }
-  else if(tab==="tab2"){
+  else if(tab==='tab2'){
     $('#tab2').attr("checked","checked");
   }
   else if(tab==="tab3"){
