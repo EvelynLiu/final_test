@@ -74,7 +74,7 @@ function getData(page,category,tab){
           alert("Error: " + error.code + " " + error.message);
           }
         }).then(function(){
-          var html = '<a href="farmer.html" onClick="call()"><div class="about"><img src="'+e.Farmer_Pic.url+'"></img><p class="name">'+e.Name+'</p><p>'+list+'</p></div></a>';
+          var html = '<a href="farmer.html" onClick="call('+e.objectId+')"><div class="about"><img src="'+e.Farmer_Pic.url+'"></img><p class="name">'+e.Name+'</p><p>'+list+'</p></div></a>';
           $('.content').append(html);
         });
       });
@@ -106,7 +106,7 @@ function getData(page,category,tab){
   event.preventDefault();
 }
 
-function call (){
+function call (id){
   alert(0);
 }
 
