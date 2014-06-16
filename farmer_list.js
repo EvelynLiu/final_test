@@ -6,7 +6,7 @@ function getData(page,category,tab){
   alert(0);
   //window.scrollTo(0,0);
   // To support pagination.
-  $("#tab1").attr("checked","checked");
+  $("#"+tab).attr("checked","checked");
   var limit = 15;
   var skip = (page-1) * limit;
   var Farmer = Parse.Object.extend("Farmer");
