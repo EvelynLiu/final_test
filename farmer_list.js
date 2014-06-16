@@ -65,14 +65,14 @@ function getData(page,category,tab){
             var productList = output.map(function (e){ return e.toJSON() });
             console.log(productList);
             productList.forEach(function (e){
-            //  list = e.Prod_name+" ";
-                list = "ShiShi";
+             list = e.Prod_name+" ";
+                //list = "ShiShi";
 
-              console.log(list);
+              console.log("Inner"+list);
             });
           }
         });
-        console.log(list);
+        console.log("Outer"+list);
         var html = '<a href="farmer.html" onClick=" "><div class="about"><img src="'+e.Farmer_Pic.url+'"></img><p class="name">'+e.Name+'</p><p>'+list+'</p></div></a>';
         $('.content').append(html);
       });
