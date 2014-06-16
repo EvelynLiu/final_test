@@ -69,12 +69,11 @@ function getData(page,category,tab){
             productList.forEach(function (e){
               //alert(2);
               list = list+e.Prod_name+" ";
+              console.log(e.Prod_name);
             });
           }
         });
-        //var photo = e.Farmer_Pic;
-        //$("profileImg")[0].src = profilePhoto.url();
-        //var html = '<a href="farmer.html"><img src="img/about_2.png"></img></a><a href="farmer.html" id="name">'+e.Name+'</a><br><a href="farmer.html" id="product">'+list+'</a>';
+        //var html = '<a href="farmer.html" onClick=" "><div class="about"><img src="'+e.Farmer_Pic.url+'"></img><p class="name">'+e.Name+'</p><p>'+list+'</p></div></a>';
         var html = '<a href="farmer.html" onClick=" "><div class="about"><img src="'+e.Farmer_Pic.url+'"></img><p class="name">'+e.Name+'</p><p>'+list+'</p></div></a>';
         $('.content').append(html);
       });
