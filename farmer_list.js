@@ -72,7 +72,7 @@ function getData(page,category,tab){
             });
           }
         });
-        var photo = e.get("Farmer_Pic");
+        var photo = e.Farmer_Pic;
         //$("profileImg")[0].src = profilePhoto.url();
         //var html = '<a href="farmer.html"><img src="img/about_2.png"></img></a><a href="farmer.html" id="name">'+e.Name+'</a><br><a href="farmer.html" id="product">'+list+'</a>';
         var html = '<a href="farmer.html" onClick=" "><div class="about"><img src="'+photo.url()+'"></img><p class="name">'+e.Name+'</p><p>'+list+'</p></div></a>';
