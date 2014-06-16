@@ -61,6 +61,7 @@ function getData(page,category,tab){
       objList.forEach(function (e){
         queryP.descending("createdAt");
         queryP.equalTo("Farmer",e.objectId);
+        console.log(e.objectId);
         queryP.find({
           success: function(output){
             var productList = output.map(function (e){ return e.toJSON() });
@@ -72,6 +73,7 @@ function getData(page,category,tab){
             console.log("Inner1"+list);
           }
         });
+
         console.log("Outer"+list);
         var html = '<a href="farmer.html" onClick=" "><div class="about"><img src="'+e.Farmer_Pic.url+'"></img><p class="name">'+e.Name+'</p><p>'+list+'</p></div></a>';
         $('.content').append(html);
