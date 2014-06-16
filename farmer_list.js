@@ -71,7 +71,6 @@ function getData(page,category,tab){
             });
             console.log("Inner1"+list);
           }
-          console.log("Inner2"+list);
         });
         console.log("Outer"+list);
         var html = '<a href="farmer.html" onClick=" "><div class="about"><img src="'+e.Farmer_Pic.url+'"></img><p class="name">'+e.Name+'</p><p>'+list+'</p></div></a>';
