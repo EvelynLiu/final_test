@@ -150,4 +150,5 @@ function call (id){
   });
   event.preventDefault();
   return true;
+  console.log("true");
 }
