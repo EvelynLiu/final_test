@@ -2,10 +2,11 @@ $(document).ready(function() {
   Parse.initialize('cBg30mmL0gugVy89T8VSVyRLE0swECDDg5ccJ46N','xJoUF67t6m6DneUpQna1HKOnCnGm29dUWuifPCrg');
 })
 
-function getData(page,category){
+function getData(page,category,tab){
   alert(0);
   //window.scrollTo(0,0);
   // To support pagination.
+  $("#"+tab).attr("checked",checked);
   var limit = 15;
   var skip = (page-1) * limit;
   var Farmer = Parse.Object.extend("Farmer");
