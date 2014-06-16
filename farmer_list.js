@@ -48,6 +48,7 @@ function getData(page,category,tab){
   //================LIST!!!
   var list = "hihi";
   //================
+
   query.limit(limit);
   query.skip(skip);
   query.equalTo("district", category);
@@ -66,11 +67,11 @@ function getData(page,category,tab){
             console.log(productList);
             productList.forEach(function (e){
              list = e.Prod_name+" ";
-                //list = "ShiShi";
-
-              console.log("Inner"+list);
+              console.log("Inner0"+list);
             });
+            console.log("Inner1"+list);
           }
+          console.log("Inner2"+list);
         });
         console.log("Outer"+list);
         var html = '<a href="farmer.html" onClick=" "><div class="about"><img src="'+e.Farmer_Pic.url+'"></img><p class="name">'+e.Name+'</p><p>'+list+'</p></div></a>';
