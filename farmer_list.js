@@ -69,7 +69,7 @@ function getData(page,category,tab){
             productList.forEach(function (e){
               //alert(2);
               list = list+e.Prod_name+" ";
-              console.log(e.Prod_name);
+              console.log(list);
             });
           }
         });
