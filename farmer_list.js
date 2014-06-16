@@ -10,7 +10,6 @@ function getData(page,category,tab){
     $('#tab3').removeAttr("checked"); 
     $('#tab4').removeAttr("checked");  
     $('#tab5').removeAttr("checked");
-    alert($('#tab2').attr("checked"));
   }
   else if(tab==="tab2"){
     $('#tab2').attr("checked","checked");
@@ -55,7 +54,6 @@ function getData(page,category,tab){
   query.descending("createdAt");
   query.find({
     success: function(results) {
-      //alert(1);
       $('.content').html("");
       var objList = results.map(function (e){ return e.toJSON() });
       console.log(objList);
@@ -67,14 +65,11 @@ function getData(page,category,tab){
             var productList = output.map(function (e){ return e.toJSON() });
             console.log(productList);
             productList.forEach(function (e){
-              //alert(2);
-              list = list+e.Prod_name+" ";
-              console.log(list);
+              list = e.Prod_name+" ";
             });
           }
         });
         console.log(list);
-        //var html = '<a href="farmer.html" onClick=" "><div class="about"><img src="'+e.Farmer_Pic.url+'"></img><p class="name">'+e.Name+'</p><p>'+list+'</p></div></a>';
         var html = '<a href="farmer.html" onClick=" "><div class="about"><img src="'+e.Farmer_Pic.url+'"></img><p class="name">'+e.Name+'</p><p>'+list+'</p></div></a>';
         $('.content').append(html);
       });
