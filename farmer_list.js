@@ -62,8 +62,7 @@ function getData(page,category,tab){
         queryP.descending("createdAt");
         queryP.equalTo("Farmer",e.objectId);
         console.log(e.objectId);
-        queryP.find({
-          console.log("find");
+        queryP.find(console.log("find");{
           success: function(output){
             var productList = output.map(function (e){ return e.toJSON() });
             console.log(productList);
