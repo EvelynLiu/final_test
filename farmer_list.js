@@ -57,32 +57,28 @@ function getData(page,category,tab){
     success: function(results) {
       $('.content').html("");
       var objList = results.map(function (e){ return e.toJSON() });
-      console.log(objList);
+      //console.log(objList);
       objList.forEach(function (e){
         queryP.descending("createdAt");
         queryP.equalTo("Farmer",e.objectId);
-        console.log(e.objectId);
         queryP.find({
           success: function(output){
             var productList = output.map(function (e){ return e.toJSON() });
             console.log(productList);
+            list="";
             productList.forEach(function (e){
-              console.log("In"+list);
              list += e.Prod_name+" ";
-              console.log("Inner0"+list);
             });
-            console.log("Inner1"+list);
           },
           error: function(error) {
           alert("Error: " + error.code + " " + error.message);
           }
         }).then(function(){
           console.log("-------------"+list);
+          var html = '<a href="farmer.html" onClick=" "><div class="about"><img src="'+e.Farmer_Pic.url+'"></img><p class="name">'+e.Name+'</p><p>'+list+'</p></div></a>';
+          $('.content').append(html);
         });
-
-        console.log("Outer"+list);
-        var html = '<a href="farmer.html" onClick=" "><div class="about"><img src="'+e.Farmer_Pic.url+'"></img><p class="name">'+e.Name+'</p><p>'+list+'</p></div></a>';
-        $('.content').append(html);
+        
       });
       //document.getElementById('content').innerHTML = templates.catalogTemplate(objList);
       query.limit(0);
