@@ -32,7 +32,7 @@ function getData(page,category,tab){
     $('#tab1').attr("checked"," ");  
     $('#tab5').attr("checked"," "); 
   }
-  else if{
+  else if(tab==="tab5"){
     $('#tab5').attr("checked","checked");
     $('#tab2').attr("checked"," ");
     $('#tab3').attr("checked"," "); 
