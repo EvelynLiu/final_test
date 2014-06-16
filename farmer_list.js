@@ -4,7 +4,7 @@ $(document).ready(function() {
 
 function getData(page,category){
   alert(0);
-  window.scrollTo(0,0);
+  //window.scrollTo(0,0);
   // To support pagination.
   var limit = 15;
   var skip = (page-1) * limit;
@@ -67,6 +67,8 @@ function getData(page,category){
       });
     }
   });*/
+  alert(1);
   event.preventDefault();
+  alert(2);
 }
 
