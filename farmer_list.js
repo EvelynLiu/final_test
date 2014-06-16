@@ -6,7 +6,7 @@ function getData(page,category,tab){
   alert(0);
   //window.scrollTo(0,0);
   // To support pagination.
-  var t = '"#"+tab';
+  var t = "#"+tab;
   console.log(e);
   $(t).attr("checked","checked");
   var limit = 15;
