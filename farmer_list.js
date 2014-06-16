@@ -45,9 +45,7 @@ function getData(page,category,tab){
   var Product = Parse.Object.extend("Product");
   var query = new Parse.Query(Farmer);
   var queryP = new Parse.Query(Product);
-  //================LIST!!!
   var list = "hihi";
-  //================
 
   query.limit(limit);
   query.skip(skip);
@@ -64,7 +62,7 @@ function getData(page,category,tab){
         queryP.find({
           success: function(output){
             var productList = output.map(function (e){ return e.toJSON() });
-            console.log(productList);
+            //console.log(productList);
             list="";
             productList.forEach(function (e){
              list += e.Prod_name+" ";
