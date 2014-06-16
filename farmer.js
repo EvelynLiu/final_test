@@ -27,8 +27,8 @@ function call (id){
           console.log(productList);
           productList.forEach(function (e){
             list = e.Prod_name;
-            var product = '<div class="product"><img src="'+e.Prod_Pic.url'"></img><h3>'+e.Prod_name+'</h3><br><a class="name">'+e.Prod_stat+'</a><p>$'+e.Prod_price+'</p></div>';
-          	$('.content').append(product);
+            var pro = '<div class="product"><img src="'+e.Prod_Pic.url'"></img><h3>'+e.Prod_name+'</h3><br><a class="name">'+e.Prod_stat+'</a><p>$'+e.Prod_price+'</p></div>';
+          	$('.content').append(pro);
           });
         }
       }).then(function(){
