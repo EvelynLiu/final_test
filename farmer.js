@@ -5,7 +5,6 @@ $(document).ready(function() {
 function call (id){
   alert(0);
   //window.scrollTo(0,0);
-  // To support pagination.
   var Farmer = Parse.Object.extend("Farmer");
   var Product = Parse.Object.extend("Product");
   var query = new Parse.Query(Farmer);
@@ -17,7 +16,7 @@ function call (id){
   query.find({
     success: function(results) {
       alert(1);
-      //$('#content').html("");
+      //$('.content').html("");
       var objList = results.map(function (e){ return e.toJSON() });
       console.log(objList);
       queryP.descending("createdAt");
@@ -27,14 +26,21 @@ function call (id){
           var productList = output.map(function (e){ return e.toJSON() });
           console.log(productList);
           productList.forEach(function (e){
-            alert(2);
-            list = list+e.Prod_name+" ";
+            list = e.Prod_name;
+            var product = '<div class="product"><img src="'+e.Prod_Pic.url'"></img><h3>'+e.Prod_name+'</h3><br><a class="name">'+e.Prod_stat+'</a><p>$'+e.Prod_price+'</p></div>';
+          	$('.content').append(product);
           });
         }
-      });
-      var html = '<a href="farmer.html" onClick=" "><div class="about"><img src="'+e.Name+'"></img><p class="name">'+e.Name+'</p><p>'+list+'</p></div></a>';
-      $('.content').append(html);
-    }
+      }).then(function(){
+          //var html = '<a href="farmer.html" onClick=" "><div class="about"><img src="'+e.Farmer_Pic.url+'"></img><p class="name">'+e.Name+'</p><p>'+list+'</p></div></a>';
+          var banner = '<img src="'+e.Farmer_Pic.url+'" class="farmer_head"><h2 class="slogan"><div id="farm-name">'+e.Name+'</div><div id="farmer-name">'+e.Name+'</div></h2>';
+          $('.banner').append(banner);
+          var description = '<p>'+e.farm_story+'</p>';
+          $('.description').append(description);
+          var info = '<p><i class="fa fa-home fa-2x"></i><a href="'+e.website+'">'+e.Name+'</a></p><p><i class="fa fa-facebook-square fa-2x"></i><a href="'+e.facebook+'">粉絲專頁</a></p><p><i class="fa fa-phone fa-2x"></i>'+e.telephone+'</p>';
+          $('.info').append(info);
+        });
+      }
   });
   event.preventDefault();
 }
