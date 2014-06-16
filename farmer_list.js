@@ -76,6 +76,8 @@ function getData(page,category,tab){
           error: function(error) {
           alert("Error: " + error.code + " " + error.message);
           }
+        }).then(function(){
+          console.log("done");
         });
 
         console.log("Outer"+list);
