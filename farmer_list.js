@@ -67,7 +67,7 @@ function getData(page,category,tab){
             var productList = output.map(function (e){ return e.toJSON() });
             console.log(productList);
             productList.forEach(function (e){
-              console.log(list);
+              console.log("In"+list);
              list = e.Prod_name+" ";
               console.log("Inner0"+list);
             });
