@@ -4,43 +4,41 @@ $(document).ready(function() {
 
 function getData(page,category,tab){
   alert(0);
-  /*if(tab==='tab1'){
+  if(tab==='tab1'){
     $('#tab1').attr("checked","checked");
-    $('#tab2').attr("checked","");
-    $('#tab3').attr("checked",""); 
-    $('#tab4').attr("checked","");  
-    $('#tab5').attr("checked","");     
+    $('#tab2').attr("checked"," ");
+    $('#tab3').attr("checked"," "); 
+    $('#tab4').attr("checked"," ");  
+    $('#tab5').attr("checked"," ");     
   }
   else if(tab==='tab2'){
     $('#tab2').attr("checked","checked");
     $('#tab1').attr("checked"," ");
-    $('#tab3').attr("checked",""); 
-    $('#tab4').attr("checked","");  
-    $('#tab5').attr("checked",""); 
+    $('#tab3').attr("checked"," "); 
+    $('#tab4').attr("checked"," ");  
+    $('#tab5').attr("checked"," "); 
   }
   else if(tab==="tab3"){
     $('#tab3').attr("checked","checked");
-    $('#tab2').attr("checked","");
-    $('#tab1').attr("checked",""); 
-    $('#tab4').attr("checked","");  
-    $('#tab5').attr("checked",""); 
+    $('#tab2').attr("checked"," ");
+    $('#tab1').attr("checked"," "); 
+    $('#tab4').attr("checked"," ");  
+    $('#tab5').attr("checked"," "); 
   }
   else if(tab==="tab4"){
     $('#tab4').attr("checked","checked");
-    $('#tab2').attr("checked","");
-    $('#tab3').attr("checked",""); 
-    $('#tab1').attr("checked","");  
-    $('#tab5').attr("checked",""); 
+    $('#tab2').attr("checked"," ");
+    $('#tab3').attr("checked"," "); 
+    $('#tab1').attr("checked"," ");  
+    $('#tab5').attr("checked"," "); 
   }
   else{
     $('#tab5').attr("checked","checked");
-    $('#tab2').attr("checked","");
-    $('#tab3').attr("checked",""); 
-    $('#tab4').attr("checked","");  
-    $('#tab1').attr("checked",""); 
-  }*/
-  $('#tab2').attr("checked","checked");
-  $('#tab1').attr("checked"," ");
+    $('#tab2').attr("checked"," ");
+    $('#tab3').attr("checked"," "); 
+    $('#tab4').attr("checked"," ");  
+    $('#tab1').attr("checked"," "); 
+  }
   var limit = 15;
   var skip = (page-1) * limit;
   var Farmer = Parse.Object.extend("Farmer");
