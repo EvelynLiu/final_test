@@ -136,11 +136,21 @@
 <script type="text/javascript" src="farmer_list.js"></script>
   <script type="text/javascript" src="farmer.js"></script>
   <script type="text/javascript">
-$.urlParam = function(name){
-    var results = new RegExp('[\?&amp;]' + name + '=([^&amp;#]*)').exec(window.location.href);
-    return results[1] || 0;
-}
-console.log($.urlParam('name'));
+function GetURLParameter(sParam)
+{
+    var sPageURL = window.location.search.substring(1);
+    var sURLVariables = sPageURL.split('&');
+    for (var i = 0; i < sURLVariables.length; i++)
+    {
+        var sParameterName = sURLVariables[i].split('=');
+        if (sParameterName[0] == sParam)
+        {
+            return sParameterName[1];
+        }
+    }
+}​
+
+console.log(GetURLParameter('name'));
   </script>
 </html>
 </html>
