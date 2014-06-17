@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
   <title>Farmily | 農家</title>
 </head>
-<body>
+<body onload="call($.url.param('name'))">
   <header>   
    	<a href="index.html"><img src="img/logo.png" alt="Farmily" class="logo"></a>
    	<nav>
@@ -29,7 +29,7 @@
          </div>
        </li>
        <li class="main_nav_li">
-       	<a href="farmily_farmer_list.html" onClick="call('zWTjVmMcOy')">農友列表</a>
+       	<a href="farmily_farmer_list.html">農友列表</a>
        		<div class="sub">
            <ul>
              <li><a href="farmily_farmer_list.html" onClick="getData(1, '北部')">北部</a></li>
