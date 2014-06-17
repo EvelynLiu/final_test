@@ -185,7 +185,7 @@ function callprod (id){
       }).then(function(){
           var detail = '<img src="'+objList[0].Prod_Pic.url+'" id="product-img"><div class="product-info"><h2 id="product-title">'+objList[0].Prod_name+'</h2><p id="product-catogory">'+objList[0].Category+'</p><ul><p id="product-price">每'+objList[0].Prod_stat+' '+objList[0].Prod_price+'元</p><li class="detail-title">規格</li>'+objList[0].Prod_stat+'，紙箱裝<li class="detail-title">運送方式</li>'+objList[0].Prod_arrive+'，200元<li class="detail-title">付費方式</li>'+objList[0].Prod_payment+'</ul><a id="button" href="farmer.html?name='+farmerId+'">立刻購買</a></div>';
           $('.product-detail').append(detail);
-          var description = '<li>農友</li><img src="'+farmerPic+'" id="farmer-img"><a href="farmer.html?name='+farmerId+'" id="farm-name">'+farmLand+'  </a><a href="farmer.html?name='+farmerId+'" id="farmer-name">'+farmerName+'</a>';
+          var description = '<li>農友</li><img src="'+farmerPic+'" id="farmer-img"><a href="farmer.html?name='+farmerId+'" id="farm-name">'+farmLand+'&nbsp&nbsp</a><a href="farmer.html?name='+farmerId+'" id="farmer-name">'+farmerName+'</a>';
           $('#farm-description').append(description);
           var prodescription = '<div id="product-description">'+objList[0].Prod_describe+'</div>';
           $('#product-description').append(prodescription);
