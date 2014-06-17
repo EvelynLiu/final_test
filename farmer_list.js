@@ -108,6 +108,7 @@ function getData(page,category,tab){
 
 function call (id){
   alert(0);
+  window.location.href = 'farmer.html';
   var Farmer = Parse.Object.extend("Farmer");
   var Product = Parse.Object.extend("Product");
   var query = new Parse.Query(Farmer);
@@ -143,5 +144,4 @@ function call (id){
       }
   });
   event.preventDefault();
-  window.location.href = 'farmer.html';
 }
