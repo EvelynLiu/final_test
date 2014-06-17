@@ -167,6 +167,7 @@ function callprod (id){
   query.find({
     success: function(results) {
       var objList = results.map(function (e){ return e.toJSON() });
+      console.log(objList);
       queryF.descending("createdAt");
       queryF.equalTo("objectId",objList.Farmer);
       queryF.find({
