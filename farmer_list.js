@@ -108,7 +108,6 @@ function getData(page,category,tab){
 
 function call (id){
   alert(0);
-  window.location.href = 'farmer.html';
   var Farmer = Parse.Object.extend("Farmer");
   var Product = Parse.Object.extend("Product");
   var query = new Parse.Query(Farmer);
@@ -139,6 +138,7 @@ function call (id){
             $('.description').append(description);
             var info = '<p><i class="fa fa-home fa-2x"></i><a href="'+e.website+'">'+e.Name+'</a></p><p><i class="fa fa-facebook-square fa-2x"></i><a href="'+e.facebook+'">粉絲專頁</a></p><p><i class="fa fa-phone fa-2x"></i>'+e.telephone+'</p>';
             $('.info').append(info);
+            return true;
           });
         });
       }
