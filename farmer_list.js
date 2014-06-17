@@ -133,7 +133,7 @@ function call (id){
               list = e.Prod_name;
               //var pro = '<div class="product"><img src="'+e.Prod_Pic.url'"></img><h3>'+e.Prod_name+'</h3><br><a class="name">'+e.Prod_stat+'</a><p>$'+e.Prod_price+'</p></div>';
               var pro = '<p>ioio</p>';
-              $('.content').append(pro);
+              //$('.content').append(pro);
               console.log(pro);
             });
           }
