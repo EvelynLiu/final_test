@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
   <title>Farmily | 農家</title>
 </head>
-<body onload="call($.url.param('name'))">
+<body>
   <header>   
    	<a href="index.html"><img src="img/logo.png" alt="Farmily" class="logo"></a>
    	<nav>
@@ -176,6 +176,9 @@ jQuery Url Plugin
   </script>
   <script type="text/javascript">
 console.log($.url.param("name"));
+$(document).ready(function(){
+	call($.url.param('name'));
+})
   </script>
 </html>
 </html>
