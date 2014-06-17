@@ -163,8 +163,9 @@ function callprod (id){
   var Product = Parse.Object.extend("Product");
   var query = new Parse.Query(Product);
   var queryF = new Parse.Query(Farmer);
-  var list="";
+  var farmerName="";
   var farmerId="";
+  var farmerPic="";
   query.equalTo("objectId", id);
   query.find({
     success: function(results) {
@@ -176,13 +177,17 @@ function callprod (id){
         success: function(output){
           var farmer = output.map(function (e){ return e.toJSON() });
           console.log(farmer);
-          list = farmer[0].Name;
+          farmerName = farmer[0].Name;
           farmerId = farmer[0].objectId;
+          farmerPic = farmer[0].Farmer_Pic.url;
         }
       }).then(function(){
           var detail = '<img src="'+objList[0].Prod_Pic.url+'" id="product-img"><div class="product-info"><h2 id="product-title">'+objList[0].Prod_name+'</h2><p id="product-catogory">'+objList[0].Category+'</p><ul><p id="product-price">每'+objList[0].Prod_stat+' '+objList[0].Prod_price+'元</p><li class="detail-title">規格</li>'+objList[0].Prod_stat+'，紙箱裝<li class="detail-title">運送方式</li>'+objList[0].Prod_arrive+'，200元<li class="detail-title">付費方式</li>'+objList[0].Prod_payment+'</ul><a id="button" href="farmer.html?name='+farmerId+'">立刻購買</a></div>';
           $('.product-detail').append(detail);
-
+          var description = '<li>農友</li><img src="'+farmerPic+'" id="farmer-img"><a href="farmer.html?name='+farmerId+'" id="farm-name">'+farmerName+'</a><a href="farmer.html?name='+farmerId+'" id="farmer-name">'+farmerName+'</a>';
+          $('.farm-description').append(description);
+          var prodescription = '<div id="product-description">'+objList[0].Prod_describe+'</div>';
+          $('.description-title').append(prodescription);
         });
     }
   });
