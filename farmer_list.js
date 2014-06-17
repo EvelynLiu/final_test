@@ -86,11 +86,11 @@ function call (id){
           })
         }
       }).then(function(){
-          var banner = '<img src="'+objList[0].Farmer_Pic.url+'" class="farmer_head"><h2 class="slogan"><div id="farm-name">'+objList[0].Name+'</div><div id="farmer-name">'+objList[0].Name+'</div></h2>';
+          var banner = '<img src="'+objList[0].Farmer_Pic.url+'" class="farmer_head"><h2 class="slogan"><div id="farm-name">'+objList[0].FarmLand+'</div><div id="farmer-name">'+objList[0].Name+'</div></h2>';
           $('.banner').append(banner);
           var description = '<p>'+objList[0].farm_story+'</p>';
           $('.description').append(description);
-          var info = '<p><i class="fa fa-home fa-2x"></i><a href="'+objList[0].website+'">'+objList[0].Name+'</a></p><p><i class="fa fa-facebook-square fa-2x"></i><a href="'+objList[0].facebook+'">粉絲專頁</a></p><p><i class="fa fa-phone fa-2x"></i>'+objList[0].telephone+'</p>';
+          var info = '<p><i class="fa fa-home fa-2x"></i><a href="'+objList[0].website+'">'+objList[0].FarmLand+'</a></p><p><i class="fa fa-facebook-square fa-2x"></i><a href="'+objList[0].facebook+'">粉絲專頁</a></p><p><i class="fa fa-phone fa-2x"></i>'+objList[0].telephone+'</p>';
           $('.info').append(info);
         });
     }
@@ -180,11 +180,12 @@ function callprod (id){
           farmerName = farmer[0].Name;
           farmerId = farmer[0].objectId;
           farmerPic = farmer[0].Farmer_Pic.url;
+          farmLand = farmer[0].FarmLand;
         }
       }).then(function(){
           var detail = '<img src="'+objList[0].Prod_Pic.url+'" id="product-img"><div class="product-info"><h2 id="product-title">'+objList[0].Prod_name+'</h2><p id="product-catogory">'+objList[0].Category+'</p><ul><p id="product-price">每'+objList[0].Prod_stat+' '+objList[0].Prod_price+'元</p><li class="detail-title">規格</li>'+objList[0].Prod_stat+'，紙箱裝<li class="detail-title">運送方式</li>'+objList[0].Prod_arrive+'，200元<li class="detail-title">付費方式</li>'+objList[0].Prod_payment+'</ul><a id="button" href="farmer.html?name='+farmerId+'">立刻購買</a></div>';
           $('.product-detail').append(detail);
-          var description = '<li>農友</li><img src="'+farmerPic+'" id="farmer-img"><a href="farmer.html?name='+farmerId+'" id="farm-name">'+farmerName+'</a><a href="farmer.html?name='+farmerId+'" id="farmer-name">'+farmerName+'</a>';
+          var description = '<li>農友</li><img src="'+farmerPic+'" id="farmer-img"><a href="farmer.html?name='+farmerId+'" id="farm-name">'+farmLand+'</a><a href="farmer.html?name='+farmerId+'" id="farmer-name">'+farmerName+'</a>';
           $('#farm-description').append(description);
           var prodescription = '<div id="product-description">'+objList[0].Prod_describe+'</div>';
           $('#product-description').append(prodescription);
