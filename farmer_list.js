@@ -107,6 +107,7 @@ function getData(page,category,tab){
 
 
 function call (id){
+  window.location.href = 'farmer.html';
   alert(0);
   var Farmer = Parse.Object.extend("Farmer");
   var Product = Parse.Object.extend("Product");
@@ -115,7 +116,6 @@ function call (id){
   query.equalTo("objectId", id);
   query.find({
     success: function(results) {
-      window.location.href = 'farmer.html';
       alert(1);
       //$('.content').html("");
       var objList = results.map(function (e){ return e.toJSON() });
@@ -125,9 +125,9 @@ function call (id){
         queryP.find({
           success: function(output){
             var productList = output.map(function (e){ return e.toJSON() });
-            console.log(productList);
-            console.log(productList[0].Prod_Pic);
-            console.log(productList[0].Prod_Pic.url);
+            // console.log(productList);
+            // console.log(productList[0].Prod_Pic);
+            // console.log(productList[0].Prod_Pic.url);
             var pro = '<div class="product"><img src="'+productList[0].Prod_Pic.url+'"></img><h3>'+productList[0].Prod_name+'</h3><br><a class="name">'+productList[0].Prod_stat+'</a><p>$'+productList[0].Prod_price+'</p></div>';
             //var pro = '<p>ioio</p>';
             $('.content').append(pro);

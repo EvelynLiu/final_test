@@ -135,5 +135,12 @@
 <script src='https://www.parsecdn.com/js/parse-1.2.18.min.js'></script>
 <script type="text/javascript" src="farmer_list.js"></script>
   <script type="text/javascript" src="farmer.js"></script>
+  <script type="text/javascript">
+$.urlParam = function(name){
+    var results = new RegExp('[\?&amp;]' + name + '=([^&amp;#]*)').exec(window.location.href);
+    return results[1] || 0;
+}
+console.log($.urlParam('name'));
+  </script>
 </html>
 </html>
