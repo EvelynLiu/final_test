@@ -73,7 +73,7 @@ function getData(page,category,tab){
           }
         }).then(function(){
           var id = "'"+e.objectId+"'";
-          var html = '<a href="farmer.html" onClick="call('+id+')"><div class="about"><img src="'+e.Farmer_Pic.url+'"></img><p class="name">'+e.Name+'</p><p>'+list+'</p></div></a>';
+          var html = '<a href="farmer.html?name='+id+'"><div class="about"><img src="'+e.Farmer_Pic.url+'"></img><p class="name">'+e.Name+'</p><p>'+list+'</p></div></a>';
           $('.content').append(html);
         });
       });
