@@ -169,6 +169,7 @@ function callprod (id){
   query.find({
     success: function(results) {
       var objList = results.map(function (e){ return e.toJSON() });
+      console.log(objList);
       queryF.descending("createdAt");
       queryF.equalTo("objectId",objList[0].Farmer);
       queryF.find({
@@ -178,8 +179,8 @@ function callprod (id){
           id = farmer.objectId;
         }
       }).then(function(){
-          var detail = '<img src="'+objList[0].Prod_Pic.url+'" id="product-img"><div class="product-info"><h2 id="product-title">'+objList[0].Name+'</h2><p id="product-catogory">'+objList.Category+'</p><ul><p id="product-price">'+objList[0].Prod_stat+' '+objList.Prod_price+'元</p><li class="detail-title">規格</li>'+objList[0].Prod_stat+'，紙箱裝<li class="detail-title">運送方式</li>'+objList[0].Prod_arrive+'，200元<li class="detail-title">付費方式</li>'+objList[0].Prod_payment+'</ul><a id="button" href="farmer.html?name='+id+'">立刻購買</a></div>';
-          $('.product-detail').append(detail);
+          //var detail = '<img src="'+objList[0].Prod_Pic.url+'" id="product-img"><div class="product-info"><h2 id="product-title">'+objList[0].Name+'</h2><p id="product-catogory">'+objList.Category+'</p><ul><p id="product-price">'+objList[0].Prod_stat+' '+objList.Prod_price+'元</p><li class="detail-title">規格</li>'+objList[0].Prod_stat+'，紙箱裝<li class="detail-title">運送方式</li>'+objList[0].Prod_arrive+'，200元<li class="detail-title">付費方式</li>'+objList[0].Prod_payment+'</ul><a id="button" href="farmer.html?name='+id+'">立刻購買</a></div>';
+          //$('.product-detail').append(detail);
 
         });
     }
