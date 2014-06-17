@@ -107,7 +107,7 @@ function getData(page,category,tab){
 
 
 function call (id){
-  window.location.href = 'farmer.html';
+  //window.location.href = 'farmer.html';
   alert(0);
   var Farmer = Parse.Object.extend("Farmer");
   var Product = Parse.Object.extend("Product");
