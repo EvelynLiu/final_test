@@ -172,7 +172,7 @@ function callprod (id){
       queryF.find({
         success: function(output){
           var farmer = output.map(function (e){ return e.toJSON() });
-          console.log(farmer.Name);
+          console.log(farmer);
           list = farmer.Name;
         }
       }).then(function(){
