@@ -122,7 +122,6 @@ function getProd(page,category){
         queryF.find({
           success: function(output){
             var farmer = output.map(function (e){ return e.toJSON() });
-            console.log(farmer[0].Name);
             list = farmer[0].Name;
           },
           error: function(error) {
@@ -153,6 +152,38 @@ function getProd(page,category){
         }  
       });
       //===========================
+    }
+  });
+  event.preventDefault();
+}
+
+
+function callprod (id){
+  var Farmer = Parse.Object.extend("Farmer");
+  var Product = Parse.Object.extend("Product");
+  var query = new Parse.Query(Product);
+  var queryF = new Parse.Query(Farmer);
+  query.equalTo("objectId", id);
+  query.find({
+    success: function(results) {
+      var objList = results.map(function (e){ return e.toJSON() });
+      queryF.descending("createdAt");
+      queryF.equalTo("objectId",e.Farmer);
+      queryF.find({
+        success: function(output){
+          var farmer = output.map(function (e){ return e.toJSON() });
+          console.log(farmer[0].Name);
+          list = farmer[0].Name;
+        }
+      }).then(function(){
+          var img = 'src="'+objList[0].Prod_Pic.url+'"';
+          $('#product-img').append(img);
+          $('#product-title').append(objList[0].Name);
+          $('product-catogory').append(objList[0].Category);
+          var price = objList[0].Prod_stat+' '+objList[0].Prod_price+'元';
+          $('#product-price').append(price);
+          //$('#detail-title').append(objList[0].);
+        });
     }
   });
   event.preventDefault();

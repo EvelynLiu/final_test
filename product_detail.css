@@ -1,0 +1,262 @@
+body{
+	/*background: url(../img/background_3.jpg) repeat;*/
+	font-family: "Helvetica Neue",Arial,"HeitiTC","LiHei Pro","微軟正黑體","Microsoft Jhenghei",sans-serif;
+	margin: 0;
+}
+
+a{
+	text-decoration: none;
+	color: white;
+}
+
+footer{
+	height: 100px;
+	background: url(../img/footer.jpg) repeat;
+	position: relative;
+	top: 30px;
+	padding-left: 60px;
+	background-color: #336600;
+}
+
+footer li{
+	font-size: 18px;
+	display: inline;
+	list-style: none;
+	position: relative;
+	top: 50px;
+	margin-left: 10px;
+	padding: 10px;
+}
+
+footer a:hover{
+	color: #FF6;
+}
+
+header{
+	background-color: #336600;
+	height: 90px;
+	padding: 0 100px 0 100px;
+	background: url(../img/banner.png) repeat;
+	margin-bottom: 20px;
+}
+
+header a:hover{
+	color: #FF6;
+}
+
+nav{
+	display: inline-block;
+	float: right;
+	margin-top: 20px;
+}
+
+.logo{
+	height: 80px;
+	margin: 5px 0 5px 0;
+	position: relative;
+	float: left;
+}
+
+.main_nav{
+	position: relative;
+	display: inline-block;
+}
+
+.main_nav_li{
+	font-size: 18px;
+	display: inline-block;
+	list-style: none;
+	position: relative;
+	margin-left: 8px;
+}
+
+.main_nav_li > a{
+	padding: 3px 8px;
+}
+
+.member{
+	margin-left: 12px;
+	padding-left: 14px;
+	border-left: 1px #fff solid;
+	display: inline;
+}
+
+.member-btn{
+	font-size: 18px;
+	background-color: #FF6;
+	color: #360;
+	border-radius: 0.3em;
+	border: solid 2px #FF6;
+	margin-left: 8px;
+}
+
+.member-btn:hover{
+	color: #FF6;
+	background-color: #360;
+}
+
+.sub{
+	display: none;
+	left: 0;
+	margin: 1px 0 0;
+	overflow: hidden;
+	position: absolute;
+	width: 160px;
+	z-index: 6666;
+	border-radius: 0.3em;
+	box-shadow: rgb(155,155,155) 0px 1px 3px 0px;
+}
+
+.sub ul{
+	margin: 0;
+	list-style: none;
+	position: relative;
+	border: 5px solid #fff;
+	background: #fff;
+	width: 150px;
+	padding: 0px;
+}
+
+.sub li {
+	float: none;
+	margin: 0 0 1px;
+}
+
+.main_nav li:hover .sub{
+	display: block;
+}
+
+.sub a{
+	color: #5C5C5C;
+	display: block;
+	font-size: 14px;
+	height: 25px;
+	letter-spacing: 1px;
+	overflow: hidden;
+	margin: 0 0 0 10px;
+	padding: 4px 0 0 10px;
+	cursor: pointer;
+	outline: 0;
+}
+
+.sub li:hover{
+	background:#336600;
+}
+
+.sub li:hover a{
+	color:white;
+}
+
+section{
+	/*background-color: white;*/
+	background:url(../img/background_inner.jpg) repeat-y;
+	width: 950px;
+	position: relative;
+	/*left:50%;*/
+	top: 10px;
+	margin: 0px auto;
+	/*margin-left:-480px;*/
+	box-shadow: rgb(155,155,155) 0px 1px 10px 0px;
+	border-radius: 2em;
+	padding-bottom: 20px;
+}
+
+.content{
+	display: inline-block;
+	position: relative;
+	width: 950px;
+	border-radius: 2em;
+	padding: 20px 0;
+}
+
+.title{
+	position: relative;
+	padding-bottom: 5px;
+	border-bottom: 1px black solid;
+	margin: 0 30px 1.3em 30px;
+	width: 880px;
+	font-size: 24px;
+	color:black;
+}
+
+#product-catogory{
+	text-align: right;
+}
+
+#product-img{
+	width: 450px;
+	float: left;
+	position: relative;
+}
+
+.product-detail{
+	position: relative;
+	height: 300px;
+	margin: 0 40px;
+}
+
+.product-detail li{
+	margin: 5px 0;
+	list-style: none;
+	display: inline-block;
+	width: 100px;
+}
+
+#product-price{
+	font-size: 18px;
+}
+
+.product-info{
+	background-color: rgba(155,155,155,0.2);
+	padding: 15px;
+	display: inline;
+	width: 350px;
+	position: relative;
+	float: right;
+	border-radius: 0.7em;
+}
+
+#farmer-img{
+	border-radius: 50%;
+	width: 60px;
+	vertical-align: middle;
+	margin: 0 20px;
+}
+
+.product-description{
+	position: relative;
+	display: inline-block;
+	margin: 20px 10px;
+	width: 450px;
+}
+#product-title{
+	margin: .7em 0 5px .7em;
+	border-bottom: 1px solid;
+	padding-bottom: 5px;
+}
+
+.description-title{
+	margin-top: 30px;
+	border-bottom: 3px #bbb solid;
+	margin-bottom: 10px;
+	padding-bottom: 5px;
+	position: relative;
+	display: block;
+}
+
+#button{
+  text-align: center;
+  font-style: bold;
+  color: white;
+  border-radius: 40px;
+  background: #52AB75;
+  border-radius: 40px;
+  padding: 8px 40px;
+  position: relative;
+  float: left;
+  margin-left: 48px;
+}
+
+#button:hover{
+  background-color:#44c767;
+}
