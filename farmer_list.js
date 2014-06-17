@@ -127,7 +127,7 @@ function call (id){
             var productList = output.map(function (e){ return e.toJSON() });
             productList.forEach(function (e){
               var pro = '<div class="product"><img src="'+e.Prod_Pic.url+'"></img><h3>'+e.Prod_name+'</h3><br><a class="name">'+e.Prod_stat+'</a><p>$'+e.Prod_price+'</p></div>';
-              $('.content').append(pro);
+              $('.content_p').append(pro);
               console.log(pro);
             })
           }
