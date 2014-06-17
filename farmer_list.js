@@ -123,8 +123,9 @@ function getProd(page,category){
           success: function(output){
             var farmer = output.map(function (e){ return e.toJSON() });
             console.log(farmer);
-            list = farmer.Name;
             console.log(list);
+            list = farmer.Name;
+            
           },
           error: function(error) {
             alert("Error: " + error.code + " " + error.message);
