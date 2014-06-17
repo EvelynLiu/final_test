@@ -179,7 +179,7 @@ function callprod (id){
           farmerId = farmer.objectId;
         }
       }).then(function(){
-          var detail = '<img src="'+objList[0].Prod_Pic.url+'" id="product-img"><div class="product-info"><h2 id="product-title">'+objList[0].Name+'</h2><p id="product-catogory">'+objList.Category+'</p><ul><p id="product-price">'+objList[0].Prod_stat+' '+objList.Prod_price+'元</p><li class="detail-title">規格</li>'+objList[0].Prod_stat+'，紙箱裝<li class="detail-title">運送方式</li>'+objList[0].Prod_arrive+'，200元<li class="detail-title">付費方式</li>'+objList[0].Prod_payment+'</ul><a id="button" href="farmer.html?name='+farmerId+'">立刻購買</a></div>';
+          var detail = '<img src="'+objList[0].Prod_Pic.url+'" id="product-img"><div class="product-info"><h2 id="product-title">'+objList[0].Prod_name+'</h2><p id="product-catogory">'+objList[0].Category+'</p><ul><p id="product-price">'+objList[0].Prod_stat+' '+objList[0].Prod_price+'元</p><li class="detail-title">規格</li>'+objList[0].Prod_stat+'，紙箱裝<li class="detail-title">運送方式</li>'+objList[0].Prod_arrive+'，200元<li class="detail-title">付費方式</li>'+objList[0].Prod_payment+'</ul><a id="button" href="farmer.html?name='+farmerId+'">立刻購買</a></div>';
           $('.product-detail').append(detail);
 
         });
