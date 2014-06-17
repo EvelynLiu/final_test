@@ -119,30 +119,28 @@ function call (id){
       alert(1);
       //$('.content').html("");
       var objList = results.map(function (e){ return e.toJSON() });
-      objList.forEach(function (e){
+      //objList.forEach(function (e){
         queryP.descending("createdAt");
         queryP.equalTo("Farmer",id);
         queryP.find({
           success: function(output){
             var productList = output.map(function (e){ return e.toJSON() });
-            // console.log(productList);
-            // console.log(productList[0].Prod_Pic);
-            // console.log(productList[0].Prod_Pic.url);
-            var pro = '<div class="product"><img src="'+productList[0].Prod_Pic.url+'"></img><h3>'+productList[0].Prod_name+'</h3><br><a class="name">'+productList[0].Prod_stat+'</a><p>$'+productList[0].Prod_price+'</p></div>';
-            //var pro = '<p>ioio</p>';
-            $('.content').append(pro);
-            console.log(pro);
+            productList.forEach(function (e){
+              var pro = '<div class="product"><img src="'+e.Prod_Pic.url+'"></img><h3>'+e.Prod_name+'</h3><br><a class="name">'+e.Prod_stat+'</a><p>$'+e.Prod_price+'</p></div>';
+              $('.content').append(pro);
+              console.log(pro);
+            })
           }
         }).then(function(){
             //var html = '<a href="farmer.html" onClick=" "><div class="about"><img src="'+e.Farmer_Pic.url+'"></img><p class="name">'+e.Name+'</p><p>'+list+'</p></div></a>';
-            var banner = '<img src="'+e.Farmer_Pic.url+'" class="farmer_head"><h2 class="slogan"><div id="farm-name">'+e.Name+'</div><div id="farmer-name">'+e.Name+'</div></h2>';
+            var banner = '<img src="'+objList[0].Farmer_Pic.url+'" class="farmer_head"><h2 class="slogan"><div id="farm-name">'+objList[0].Name+'</div><div id="farmer-name">'+objList[0].Name+'</div></h2>';
             $('.banner').append(banner);
-            var description = '<p>'+e.farm_story+'</p>';
+            var description = '<p>'+objList[0].farm_story+'</p>';
             $('.description').append(description);
-            var info = '<p><i class="fa fa-home fa-2x"></i><a href="'+e.website+'">'+e.Name+'</a></p><p><i class="fa fa-facebook-square fa-2x"></i><a href="'+e.facebook+'">粉絲專頁</a></p><p><i class="fa fa-phone fa-2x"></i>'+e.telephone+'</p>';
+            var info = '<p><i class="fa fa-home fa-2x"></i><a href="'+objList[0].website+'">'+objList[0].Name+'</a></p><p><i class="fa fa-facebook-square fa-2x"></i><a href="'+objList[0].facebook+'">粉絲專頁</a></p><p><i class="fa fa-phone fa-2x"></i>'+objList[0].telephone+'</p>';
             $('.info').append(info);
           });
-        });
+        //});
       }
   });
   event.preventDefault();
