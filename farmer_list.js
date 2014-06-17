@@ -125,9 +125,9 @@ function call (id){
           success: function(output){
             var productList = output.map(function (e){ return e.toJSON() });
             console.log(productList);
-            console.log(productList.Prod_Pic);
-            console.log(productList.Prod_Pic.url);
-            var pro = '<div class="product"><img src="'+productList.Prod_Pic.url+'"></img><h3>'+productList.Prod_name+'</h3><br><a class="name">'+productList.Prod_stat+'</a><p>$'+productList.Prod_price+'</p></div>';
+            console.log(productList[0].Prod_Pic);
+            console.log(productList[0].Prod_Pic.url);
+            var pro = '<div class="product"><img src="'+productList[0].Prod_Pic.url+'"></img><h3>'+productList[0].Prod_name+'</h3><br><a class="name">'+productList[0].Prod_stat+'</a><p>$'+productList[0].Prod_price+'</p></div>';
             //var pro = '<p>ioio</p>';
             $('.content').append(pro);
             console.log(pro);
