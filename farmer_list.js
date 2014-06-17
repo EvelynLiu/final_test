@@ -108,7 +108,7 @@ function getData(page,category,tab){
 
 function call (id){
   alert(0);
-  //window.scrollTo(0,0);
+  window.location.href = 'farmer.html';
   var Farmer = Parse.Object.extend("Farmer");
   var Product = Parse.Object.extend("Product");
   var query = new Parse.Query(Farmer);
@@ -126,12 +126,10 @@ function call (id){
           success: function(output){
             var productList = output.map(function (e){ return e.toJSON() });
             console.log(productList);
-            productList.forEach(function (e){
-              var pro = '<div class="product"><img src="'+e.Prod_Pic.url+'"></img><h3>'+e.Prod_name+'</h3><br><a class="name">'+e.Prod_stat+'</a><p>$'+e.Prod_price+'</p></div>';
-              //var pro = '<p>ioio</p>';
-              $('.content').append(pro);
-              console.log(pro);
-            });
+            var pro = '<div class="product"><img src="'+productList.Prod_Pic.url+'"></img><h3>'+productList.Prod_name+'</h3><br><a class="name">'+productList.Prod_stat+'</a><p>$'+productList.Prod_price+'</p></div>';
+            //var pro = '<p>ioio</p>';
+            $('.content').append(pro);
+            console.log(pro);
           }
         }).then(function(){
             //var html = '<a href="farmer.html" onClick=" "><div class="about"><img src="'+e.Farmer_Pic.url+'"></img><p class="name">'+e.Name+'</p><p>'+list+'</p></div></a>';
@@ -139,7 +137,7 @@ function call (id){
             $('.banner').append(banner);
             var description = '<p>'+e.farm_story+'</p>';
             $('.description').append(description);
-            var info = '<p><i class="fa fa-home fa-2x"></i><a href="'+e.website+'">'+e.Name+'</a></p><br><p><i class="fa fa-facebook-square fa-2x"></i><a href="'+e.facebook+'">粉絲專頁</a></p><br><p><i class="fa fa-phone fa-2x"></i>'+e.telephone+'</p>';
+            var info = '<p><i class="fa fa-home fa-2x"></i><a href="'+e.website+'">'+e.Name+'</a></p><p><i class="fa fa-facebook-square fa-2x"></i><a href="'+e.facebook+'">粉絲專頁</a></p><p><i class="fa fa-phone fa-2x"></i>'+e.telephone+'</p>';
             $('.info').append(info);
           });
         });
