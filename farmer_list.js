@@ -176,8 +176,8 @@ function callprod (id){
         success: function(output){
           var farmer = output.map(function (e){ return e.toJSON() });
           console.log(farmer);
-          list = farmer.Name;
-          farmerId = farmer.objectId;
+          list = farmer[0].Name;
+          farmerId = farmer[0].objectId;
         }
       }).then(function(){
           var detail = '<img src="'+objList[0].Prod_Pic.url+'" id="product-img"><div class="product-info"><h2 id="product-title">'+objList[0].Prod_name+'</h2><p id="product-catogory">'+objList[0].Category+'</p><ul><p id="product-price">每'+objList[0].Prod_stat+' '+objList[0].Prod_price+'元</p><li class="detail-title">規格</li>'+objList[0].Prod_stat+'，紙箱裝<li class="detail-title">運送方式</li>'+objList[0].Prod_arrive+'，200元<li class="detail-title">付費方式</li>'+objList[0].Prod_payment+'</ul><a id="button" href="farmer.html?name='+farmerId+'">立刻購買</a></div>';
