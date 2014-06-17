@@ -120,6 +120,7 @@ function getProd(page,category){
       objList.forEach(function (e){
         queryF.descending("createdAt");
         queryF.equalTo("objectId",e.Farmer);
+        console.log(objList);
         queryF.find({
           success: function(output){
             var farmer = output.map(function (e){ return e.toJSON() });
