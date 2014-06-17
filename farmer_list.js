@@ -116,7 +116,6 @@ function getProd(page,category){
     success: function(results) {
       $('.content').html("");
       var objList = results.map(function (e){ return e.toJSON() });
-      //console.log(objList);
       objList.forEach(function (e){
         queryF.descending("createdAt");
         queryF.equalTo("objectId",e.Farmer);
@@ -125,6 +124,7 @@ function getProd(page,category){
             var farmer = output.map(function (e){ return e.toJSON() });
             console.log(farmer);
             list = farmer.Name;
+            console.log(list);
           },
           error: function(error) {
             alert("Error: " + error.code + " " + error.message);
