@@ -113,9 +113,6 @@ function call (id){
   var Product = Parse.Object.extend("Product");
   var query = new Parse.Query(Farmer);
   var queryP = new Parse.Query(Product);
-  //================LIST!!!
-  var list = "hihi";
-  //================
   query.equalTo("objectId", id);
   query.find({
     success: function(results) {
@@ -130,10 +127,9 @@ function call (id){
             var productList = output.map(function (e){ return e.toJSON() });
             console.log(productList);
             productList.forEach(function (e){
-              list = e.Prod_name;
-              //var pro = '<div class="product"><img src="'+e.Prod_Pic.url'"></img><h3>'+e.Prod_name+'</h3><br><a class="name">'+e.Prod_stat+'</a><p>$'+e.Prod_price+'</p></div>';
-              var pro = '<p>ioio</p>';
-              //$('.content').append(pro);
+              var pro = '<div class="product"><img src="'+e.Prod_Pic.url'"></img><h3>'+e.Prod_name+'</h3><br><a class="name">'+e.Prod_stat+'</a><p>$'+e.Prod_price+'</p></div>';
+              //var pro = '<p>ioio</p>';
+              $('.content').append(pro);
               console.log(pro);
             });
           }
