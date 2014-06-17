@@ -187,7 +187,7 @@ function callprod (id){
           var description = '<li>農友</li><img src="'+farmerPic+'" id="farmer-img"><a href="farmer.html?name='+farmerId+'" id="farm-name">'+farmerName+'</a><a href="farmer.html?name='+farmerId+'" id="farmer-name">'+farmerName+'</a>';
           $('#farm-description').append(description);
           var prodescription = '<div id="product-description">'+objList[0].Prod_describe+'</div>';
-          $('.description-production').append(prodescription);
+          $('#product-description').append(prodescription);
         });
     }
   });
