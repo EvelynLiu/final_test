@@ -172,8 +172,8 @@ function callprod (id){
       queryF.find({
         success: function(output){
           var farmer = output.map(function (e){ return e.toJSON() });
-          console.log(farmer[0].Name);
-          list = farmer[0].Name;
+          console.log(farmer.Name);
+          list = farmer.Name;
         }
       }).then(function(){
           var img = 'src="'+objList[0].Prod_Pic.url+'"';
