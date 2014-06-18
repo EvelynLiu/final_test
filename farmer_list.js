@@ -2,6 +2,64 @@ $(document).ready(function() {
   Parse.initialize('cBg30mmL0gugVy89T8VSVyRLE0swECDDg5ccJ46N','xJoUF67t6m6DneUpQna1HKOnCnGm29dUWuifPCrg');
 })
 
+function search(str){
+  var limit = 15;
+  var skip = (page-1) * limit;
+  var Farmer = Parse.Object.extend("Farmer");
+  var Product = Parse.Object.extend("Product");
+  var query = new Parse.Query(Product);
+  var queryF = new Parse.Query(Farmer);
+  var list = "hihi";
+  query.limit(limit);
+  query.skip(skip);
+  query.contains("Prod_name", str);
+  query.descending("createdAt");
+  query.find({
+    success: function(results) {
+      $('.content').html("");
+      var objList = results.map(function (e){ return e.toJSON() });
+      objList.forEach(function (e){
+        queryF.descending("createdAt");
+        queryF.equalTo("objectId",e.Farmer);
+        queryF.find({
+          success: function(output){
+            var farmer = output.map(function (e){ return e.toJSON() });
+            list = farmer[0].Name;
+          },
+          error: function(error) {
+            alert("Error: " + error.code + " " + error.message);
+          }
+        }).then(function(){
+          var html = '<a href="product_detail.html?name='+e.objectId+'"><div class="about"><img src="'+e.Prod_Pic.url+'"></img><p class="name">'+e.Prod_name+'</p><p>'+list+'</p></div></a>';
+          $('.content').append(html);
+        });
+      });
+      //底下的小分頁=================
+      query.limit(0);
+      query.skip(0);
+      var option = {};
+      query.count({
+        success: function(count){
+        var totalPage = Math.ceil(count / limit);
+        var currentPage = parseInt(page);
+        option = {
+          'previous': (currentPage === 1) ? 1 : currentPage-1,
+          'next': (currentPage === totalPage) ? currentPage : currentPage+1,
+          'current': currentPage,
+          'last': totalPage,
+        };
+        }, 
+        error: function(err){
+
+        }  
+      });
+      //===========================
+    }
+  });
+  event.preventDefault();
+}
+
+
 function getData(page,category){
   var limit = 15;
   var skip = (page-1) * limit;
