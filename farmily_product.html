@@ -41,8 +41,8 @@
 		</p>
 		
 		<div class="main">
-			<form class="search" method="post" action="product.html" >
-				<input type="text" name="q" placeholder="請輸入關鍵字" />
+			<form class="search" method="post" action="farmily_product.html" >
+				<input id="keyword" type="text" name="q" placeholder="請輸入關鍵字" />
 			</form>
 		</div>
 		
@@ -153,6 +153,9 @@ jQuery Url Plugin
 console.log($.url.param("name"));
 $(document).ready(function(){
 	getData(1,$.url.param('name'));
+})
+$('#keyword').keyup(function(){
+	search($(this).val());
 })
   </script>
 
