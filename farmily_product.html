@@ -41,7 +41,7 @@
 		</p>
 		
 		<div class="main">
-			<form class="search" method="post" action="farmily_product.html" >
+			<form class="search" method="get" action="farmily_product.html" >
 				<input id="keyword" type="text" name="q" placeholder="請輸入關鍵字" />
 			</form>
 		</div>
@@ -154,9 +154,7 @@ console.log($.url.param("name"));
 $(document).ready(function(){
 	getData(1,$.url.param('name'));
 })
-$('#keyword').keyup(function(){
-	search($(this).val());
-})
+
   </script>
 
 	</html>
