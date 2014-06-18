@@ -3,7 +3,6 @@ $(document).ready(function() {
 })
 
 function search(str){
-  alert(0);
   var limit = 15;
   var Farmer = Parse.Object.extend("Farmer");
   var Product = Parse.Object.extend("Product");
