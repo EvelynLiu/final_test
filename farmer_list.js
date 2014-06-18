@@ -11,7 +11,6 @@ function search(str){
   var queryF = new Parse.Query(Farmer);
   var list = "hihi";
   query.limit(limit);
-  query.skip(skip);
   query.contains("Prod_name", str);
   query.descending("createdAt");
   query.find({
