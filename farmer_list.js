@@ -3,8 +3,8 @@ $(document).ready(function() {
 })
 
 function search(str){
+  alert(0);
   var limit = 15;
-  var skip = (page-1) * limit;
   var Farmer = Parse.Object.extend("Farmer");
   var Product = Parse.Object.extend("Product");
   var query = new Parse.Query(Product);
@@ -34,26 +34,6 @@ function search(str){
           $('.content').append(html);
         });
       });
-      //底下的小分頁=================
-      query.limit(0);
-      query.skip(0);
-      var option = {};
-      query.count({
-        success: function(count){
-        var totalPage = Math.ceil(count / limit);
-        var currentPage = parseInt(page);
-        option = {
-          'previous': (currentPage === 1) ? 1 : currentPage-1,
-          'next': (currentPage === totalPage) ? currentPage : currentPage+1,
-          'current': currentPage,
-          'last': totalPage,
-        };
-        }, 
-        error: function(err){
-
-        }  
-      });
-      //===========================
     }
   });
   event.preventDefault();
